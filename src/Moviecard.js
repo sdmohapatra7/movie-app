@@ -1,4 +1,5 @@
 import React from 'react';
+import cardStyle from './movieCard.module.css'
 
 class MovieCard extends React.Component {
     
@@ -56,26 +57,26 @@ class MovieCard extends React.Component {
         const {movies, onIncStars, onClickFav, onClickAddtocart, onDecStars} =  this.props
         const {title,plot,price,rating,stars,fav,isInCart,poster} = this.props.movies;
         return (
-            <div className='main'>
-                <div className='movie-card'>
-                    <div className='left'>
+            <div className={cardStyle.main}>
+                <div className={cardStyle.movieCard}>
+                    <div className={cardStyle.left}>
                         <img alt='Poster' src={poster} />
                     </div>
-                    <div className='right'>
-                        <div className='title'>{title}</div>
-                        <div className='plot'>{plot}</div>
-                        <div className='price'>Rs. {price}</div>
-                        <div className='footer'>
-                            <div className='rating'>{rating}</div>
-                            <div className='star-dis'>
-                                <img className='str-btn' alt='decrease' src='https://cdn-icons-png.flaticon.com/128/43/43625.png' onClick={() => onDecStars(movies)}/>
-                                <img className='stars' alt='star' src='https://cdn-icons-png.flaticon.com/128/2107/2107957.png' />
-                                <img className='str-btn' alt='increase' src='https://cdn-icons-png.flaticon.com/128/748/748113.png' onClick={() => onIncStars(movies)} />
+                    <div className={cardStyle.right}>
+                        <div className={cardStyle.title}>{title}</div>
+                        <div className={cardStyle.plot}>{plot}</div>
+                        <div className={cardStyle.price}>Rs. {price}</div>
+                        <div className={cardStyle.footer}>
+                            <div className={cardStyle.rating}>{rating}</div>
+                            <div className={cardStyle.starDis}>
+                                <img className={cardStyle.strBtn} alt='decrease' src='https://cdn-icons-png.flaticon.com/128/43/43625.png' onClick={() => onDecStars(movies)}/>
+                                <img className={cardStyle.stars} alt='star' src='https://cdn-icons-png.flaticon.com/128/2107/2107957.png' />
+                                <img className={cardStyle.strBtn} alt='increase' src='https://cdn-icons-png.flaticon.com/128/748/748113.png' onClick={() => onIncStars(movies)} />
                                 <span>{stars}</span>
                             </div>
                             {/* {fav?<button className='unfavourite-btn' onClick={this.handleFav}>Un-favourite</button>:<button className='favourite-btn' onClick={this.handleFav}>Favourite</button>} */}
-                            <button className={fav?'unfavourite-btn':'favourite-btn'} onClick={() => onClickFav(movies)}>{fav?'Un-favourite':'Favourite'}</button>
-                            <button className={isInCart?'unfavourite-btn':'cart-btn'} onClick={() => onClickAddtocart(movies)}>{isInCart?'Remove From cart':'Add to cart'}</button>
+                            <button className={fav?cardStyle.unfavouriteBtn:cardStyle.favouriteBtn} onClick={() => onClickFav(movies)}>{fav?'Un-favourite':'Favourite'}</button>
+                            <button className={isInCart?cardStyle.unfavouriteBtn:cardStyle.favouriteBtn} onClick={() => onClickAddtocart(movies)}>{isInCart?'Remove From cart':'Add to cart'}</button>
                         </div>
                     </div>
                 </div>
