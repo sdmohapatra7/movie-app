@@ -1,19 +1,7 @@
 import React from 'react';
 
 class MovieCard extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            title:'ASUR 2',
-            plot:'Threeler Movie with lots of Comedy',
-            price:199,
-            rating:8.9,
-            stars:0,
-            fav:false,
-            isInCart:false
-        }
-        // this.increaseStars = this.increaseStars.bind(this);
-    }
+    
     //either use bind method or use arrow function and another we can bind in function call time or in constructor also ..there are three way to bind..
     increaseStars=()=>{
         // console.log(this.state);
@@ -65,7 +53,7 @@ class MovieCard extends React.Component {
 
     render() {
         console.log('render the component');
-        const {title,plot,price,rating,stars,fav,isInCart} = this.state;
+        const {title,plot,price,rating,stars,fav,isInCart} = this.props;
         return (
             <div className='main'>
                 <div className='movie-card'>
