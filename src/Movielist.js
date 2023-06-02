@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MovieCard from './Moviecard';
 
 
-export default class Movielist extends Component {
-    
-    render() {
-        // const {title,plot,price,rating,stars,fav,isInCart} = this.state;
-        const { movies,onIncStars,onDecStars,onClickFav,onClickAddtocart } = this.props;
+const Movielist = (props) => {
 
-        return (
-            <div>
-                {movies.map((movie,id) => (
+
+    // const {title,plot,price,rating,stars,fav,isInCart} = state;
+    const { movies, onIncStars, onDecStars, onClickFav, onClickAddtocart } = props;
+
+    return (
+        <div>
+            {movies.map((movie, id) => (
                 <MovieCard movies={movie}
                     onIncStars={onIncStars}
                     onDecStars={onDecStars}
@@ -19,7 +19,8 @@ export default class Movielist extends Component {
                     key={id}
                 />))}
 
-            </div>
-        )
-    }
+        </div>
+    )
+
 }
+export default Movielist;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Nav = styled.div`
@@ -27,32 +27,32 @@ const CartIconContainer = styled.div`
     cursor:pointer;
 `;
 const Cartcount = styled.div`
-    background-color: ${(props)=>props.color};
+    background-color: ${(props) => props.color};
     border-radius:50%;
     padding:4px 8px;
     position:absolute;
     right:10px;
     top:-5px;
     font-size:12px;
-    visibility: ${(props)=>props.show?'visible':'hidden'}
+    visibility: ${(props) => props.show ? 'visible' : 'hidden'}
 `;
 
-export default class Navbar extends Component {
-    render() {
-        const {cartCount} = this.props
-        // console.log(this.props)
-        
-        return (
-            <Nav> 
-                <Title>Movie-App</Title>
-                <CartIconContainer>
-                    <CartImg alt='cart-icon' src='https://cdn-icons-png.flaticon.com/128/9453/9453946.png' />
-                    <Cartcount color='yellow' show={true}>{cartCount}</Cartcount>
-                </CartIconContainer>
-            </Nav>
-        )
-    }
+const Navbar = (props) => {
+
+    const { cartCount } = props
+    // console.log(props)
+
+    return (
+        <Nav>
+            <Title>Movie-App</Title>
+            <CartIconContainer>
+                <CartImg alt='cart-icon' src='https://cdn-icons-png.flaticon.com/128/9453/9453946.png' />
+                <Cartcount color='yellow' show={true}>{cartCount}</Cartcount>
+            </CartIconContainer>
+        </Nav>
+    )
 }
+
 
 /*const styles = {
     nav:{
@@ -90,3 +90,5 @@ export default class Navbar extends Component {
         fontSize:12
     }
 }*/
+
+export default Navbar;
