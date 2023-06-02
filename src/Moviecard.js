@@ -53,7 +53,7 @@ class MovieCard extends React.Component {
     // }
 
     render() {
-        console.log('render the component');
+        // console.log('render the component');
         const {movies, onIncStars, onClickFav, onClickAddtocart, onDecStars} =  this.props
         const {title,plot,price,rating,stars,fav,isInCart,poster} = this.props.movies;
         return (

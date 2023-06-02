@@ -26,7 +26,7 @@ const CartIconContainer = styled.div`
     position:relative;
     cursor:pointer;
 `;
-const CartCount = styled.div`
+const Cartcount = styled.div`
     background-color: ${(props)=>props.color};
     border-radius:50%;
     padding:4px 8px;
@@ -39,12 +39,15 @@ const CartCount = styled.div`
 
 export default class Navbar extends Component {
     render() {
+        const {cartCount} = this.props
+        // console.log(this.props)
+        
         return (
             <Nav> 
                 <Title>Movie-App</Title>
                 <CartIconContainer>
                     <CartImg alt='cart-icon' src='https://cdn-icons-png.flaticon.com/128/9453/9453946.png' />
-                    <CartCount color='yellow' show={true}>6</CartCount>
+                    <Cartcount color='yellow' show={true}>{cartCount}</Cartcount>
                 </CartIconContainer>
             </Nav>
         )
